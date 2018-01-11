@@ -1,18 +1,21 @@
-var express = require('express');
-var app = express();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
-var path = require('path');
-var port = process.env.PORT || 80;
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+const path = require('path');
+const port = process.env.PORT || 80;
+const bodyParser = require('body-parser');
+const env = process.env.NODE_ENV || 'dev';
 
-var env = process.env.NODE_ENV || 'dev';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
+require('./microservices/index.js');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname + '/public'));
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/../public/index.html'));
 });
 
