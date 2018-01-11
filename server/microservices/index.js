@@ -1,5 +1,7 @@
 const googleTrends = require('./google.js');
-const yahooTrends = require('./yahoo.js');
-const { redditPopular } = require('./reddit.js');
+const yahooTrending = require('./yahoo.js');
+const { redditPopular, redditTrending } = require('./reddit.js');
 
-// yahooTrends().then((trends) => console.log(trends));
+// yahooTrends().then((trending) => console.log(trending));
+// redditPopular().then((popular) => console.log(popular));
+// redditTrending().then((trending) => console.log(trending));
