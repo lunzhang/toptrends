@@ -9,16 +9,16 @@ module.exports =  function yahooTrending() {
     return new Promise((res, rej) => {
         axios.get(url).then((resp) => {
             const $ = cheerio.load(resp.data);
-            const trends = [];
+            const trending = [];
 
             $('.trending-list .trending-item a').each((i, elem) => {
-                trends.push({
+                trending.push({
                     trend: elem.attribs.title,
                     link: elem.attribs.href
                 });
             });
 
-            res(trends);
+            res(trending);
         });
     });
 };

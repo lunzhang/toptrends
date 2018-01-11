@@ -5,7 +5,7 @@ const https = require('https');
 const popularUrl = 'http://reddit.com/r/popular';
 const trendingUrl = 'https://www.reddit.com/r/trendingsubreddits/';
 
-// fetches popular posts
+// fetches current popular posts
 function redditPopular() {
     return new Promise((res, rej) => {
         axios.get(popularUrl).then((resp) => {
