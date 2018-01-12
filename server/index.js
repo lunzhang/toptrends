@@ -9,7 +9,8 @@ const env = process.env.NODE_ENV || 'dev';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-require('./microservices/index.js');
+require('./db/db');
+require('./microservices/index');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
