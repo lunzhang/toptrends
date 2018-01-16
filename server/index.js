@@ -11,6 +11,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 require('./db/db');
 require('./microservices/index');
+require('./api/index');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
