@@ -53,3 +53,4 @@ process.on('SIGTERM', function () {
 require('./model/YoutubeTrends');
 require('./model/RedditTrends');
 require('./model/RedditPopular');
+require('./model/YahooTrends');
