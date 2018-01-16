@@ -4,7 +4,7 @@ const https = require('https');
 
 const url = 'https://twitter.com/i/trends?k=&pc=true&show_context=false&src=search-home';
 
-function twitterTrending() {
+function twitterTrends() {
     return new Promise((res, rej) => {
         axios.get(url).then((resp) => {
             const $ = cheerio.load(resp.data.module_html);
@@ -26,5 +26,5 @@ function twitterTrending() {
 };
 
 module.exports = {
-    twitterTrending
+    twitterTrends
 };

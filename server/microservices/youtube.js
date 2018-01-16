@@ -4,7 +4,7 @@ const https = require('https');
 
 const url = 'https://www.youtube.com/feed/trending';
 
-function youtubeTrending() {
+function youtubeTrends() {
     return new Promise((res, rej) => {
         axios.get(url, { params: { pbj: 1 }}).then((resp) => {
             const $ = cheerio.load(resp.data);
@@ -26,5 +26,5 @@ function youtubeTrending() {
 };
 
 module.exports = {
-    youtubeTrending
+    youtubeTrends
 };

@@ -5,7 +5,7 @@ const https = require('https');
 const url = 'https://www.yahoo.com/';
 
 // fetches trending now from yahoo
-module.exports =  function yahooTrending() {
+module.exports =  function yahooTrends() {
     return new Promise((res, rej) => {
         axios.get(url).then((resp) => {
             const $ = cheerio.load(resp.data);

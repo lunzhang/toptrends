@@ -5,16 +5,16 @@ const RedditPopular = mongoose.model('RedditPopular');
 const YahooTrends = mongoose.model('YahooTrends');
 const TwitterTrends = mongoose.model('TwitterTrends');
 
-const { youtubeTrending } = require('./youtube.js');
-const yahooTrending = require('./yahoo.js');
-const { redditPopular, redditTrending } = require('./reddit.js');
-const { twitterTrending } = require('./twitter.js');
+const { youtubeTrends } = require('./youtube.js');
+const yahooTrends = require('./yahoo.js');
+const { redditPopular, redditTrends } = require('./reddit.js');
+const { twitterTrends } = require('./twitter.js');
 
 function dailyUpdate() {
         const date = new Date().toISOString().split('T')[0];
 
         //  Youtube trending videos
-        youtubeTrending().then((trends) => {
+        youtubeTrends().then((trends) => {
             YoutubeTrends.findOneAndUpdate({
                 date
             }, {
@@ -42,7 +42,7 @@ function dailyUpdate() {
         });
 
         // Reddit trending daily subreddits
-        redditTrending().then((trends) => {
+        redditTrends().then((trends) => {
             RedditTrends.findOneAndUpdate({
                 date
             }, {
@@ -56,7 +56,7 @@ function dailyUpdate() {
         });
 
         // Yahoo trending topics
-        yahooTrending().then((trends) => {
+        yahooTrends().then((trends) => {
             YahooTrends.findOneAndUpdate({
                 date
             }, {
@@ -70,7 +70,7 @@ function dailyUpdate() {
         });
 
         // Twitter trending hashtags
-        twitterTrending().then((trends) => {
+        twitterTrends().then((trends) => {
             TwitterTrends.findOneAndUpdate({
                 date
             }, {

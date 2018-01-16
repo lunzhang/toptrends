@@ -28,7 +28,7 @@ function redditPopular() {
 };
 
 // fetches trending subreddits with the associated date
-function redditTrending() {
+function redditTrends() {
     return new Promise((res, rej) => {
         axios.get(trendingUrl).then((resp) => {
             const $ = cheerio.load(resp.data);
@@ -52,5 +52,5 @@ function redditTrending() {
 
 module.exports = {
     redditPopular,
-    redditTrending
+    redditTrends
 };
