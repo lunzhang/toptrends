@@ -54,3 +54,4 @@ require('./model/YoutubeTrends');
 require('./model/RedditTrends');
 require('./model/RedditPopular');
 require('./model/YahooTrends');
+require('./model/TwitterTrends');
