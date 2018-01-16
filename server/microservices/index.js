@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const YoutubeTrends = mongoose.model('YoutubeTrends');
+const RedditPopular = mongoose.model('RedditPopular');
 
 const { youtubeTrending } = require('./youtube.js');
 const yahooTrending = require('./yahoo.js');
@@ -7,20 +8,19 @@ const { redditPopular, redditTrending } = require('./reddit.js');
 const { twitterTrending } = require('./twitter.js');
 
 // yahooTrends().then((trending) => console.log(trending));
-// redditPopular().then((popular) => console.log(popular));
 // redditTrending().then((trending) => console.log(trending));
 // twitterTrending().then((trending) => console.log(trending));
-// youtubeTrending().then((trending) => console.log(trending));
 
 function dailyUpdate() {
-        youtubeTrending().then((trending) => {
-            const today = new Date().toISOString().split('T')[0];
+        const date = new Date().toISOString().split('T')[0];
 
+        //  Youtube trending videos
+        youtubeTrending().then((trends) => {
             YoutubeTrends.findOneAndUpdate({
-                date: today
+                date
             }, {
-                date: today,
-                trends: trending
+                date,
+                trends
             }, {
                 upsert: true
             }, function(err, obj) {
@@ -28,6 +28,21 @@ function dailyUpdate() {
             });
         });
 
+        // Reddit popular posts
+        redditPopular().then((popular) => {
+                RedditPopular.findOneAndUpdate({
+                    date
+                }, {
+                    date,
+                    popular
+                }, {
+                    upsert: true
+                }, function(err, obj) {
+                    if (err) console.log(err);
+                });
+        });
+
+        // daily timer
         setTimeout(dailyUpdate, 8.64e+7);
 };
 

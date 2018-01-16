@@ -50,4 +50,5 @@ process.on('SIGTERM', function () {
     });
 });
 
-require('./model/youtube');
+require('./model/YoutubeTrends');
+require('./model/RedditPopular');
