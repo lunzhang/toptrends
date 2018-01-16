@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const YoutubeTrends = mongoose.model('YoutubeTrends');
+const RedditTrends = mongoose.model('RedditTrends');
 const RedditPopular = mongoose.model('RedditPopular');
 
 const { youtubeTrending } = require('./youtube.js');
@@ -30,16 +31,30 @@ function dailyUpdate() {
 
         // Reddit popular posts
         redditPopular().then((popular) => {
-                RedditPopular.findOneAndUpdate({
-                    date
-                }, {
-                    date,
-                    popular
-                }, {
-                    upsert: true
-                }, function(err, obj) {
-                    if (err) console.log(err);
-                });
+            RedditPopular.findOneAndUpdate({
+                date
+            }, {
+                date,
+                popular
+            }, {
+                upsert: true
+            }, function(err, obj) {
+                if (err) console.log(err);
+            });
+        });
+
+        // Reddit trending daily subreddits
+        redditTrending().then((trends) => {
+            RedditTrends.findOneAndUpdate({
+                date
+            }, {
+                date,
+                trends: trends[0]
+            }, {
+                upsert: true
+            }, function(err, obj) {
+                if (err) console.log(err);
+            });
         });
 
         // daily timer
