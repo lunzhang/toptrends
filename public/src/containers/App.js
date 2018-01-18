@@ -7,14 +7,14 @@ const mapStateToProps = function mapStateToProps(state) {
   };
 }
 
-class Main extends Component {
+class App extends Component {
   render() {
     return (
       <div id="main">
-        HELLO WORLD
+
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps)(App);
