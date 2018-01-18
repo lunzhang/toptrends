@@ -9,7 +9,7 @@ const env = process.env.NODE_ENV || 'dev';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-require('./db/db');
+require('./db/index');
 require('./microservices/index');
 require('./api/index');
 
