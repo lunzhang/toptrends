@@ -1,10 +1,6 @@
-import * as actions from '../actions';
+import { combineReducers } from 'redux';
+import charts from './charts';
 
-function rootReducer(state = {}, action) {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
-
-export default rootReducer;
+export default combineReducers({
+    charts
+});
