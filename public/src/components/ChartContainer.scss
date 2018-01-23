@@ -1,0 +1,20 @@
+:local(.containerStyle) {
+    border: 1px solid black;
+}
+
+:local(.headerStyle) {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+
+    div {
+        display: inline-block;
+    }
+
+    .close-btn {
+        float: right;
+        &:hover {
+            color: #E57373;
+        }
+    }
+}

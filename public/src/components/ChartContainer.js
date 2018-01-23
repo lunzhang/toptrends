@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-
-const containerStyle = {
-    border: '1px solid black',
-};
-
-const headerStyle = {
-    borderBottom: '1px solid black',
-    padding: '10px',
-    cursor: 'pointer'
-};
+import styles from './ChartContainer.scss';
 
 export default class ChartContainer extends Component {
     render() {
         return (
-            <div style={Object.assign({},containerStyle, this.props.style)}>
-                <div {...this.props} style={headerStyle}>{this.props.headertitle}</div>
+            <div style={this.props.style} className={styles.containerStyle}>
+                <div {...this.props} style={{}} className={styles.headerStyle} >
+                    <div className="header-title">
+                        {this.props.headertitle}
+                    </div>
+                    <div className="close-btn" >
+                        X
+                    </div>
+                </div>
                 {this.props.children}
             </div>
         );
