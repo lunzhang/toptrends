@@ -3,11 +3,14 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import App from './containers/App.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // render app
 render(
   <Provider store={store}>
-    <App />
+      <MuiThemeProvider>
+        <App />
+      </MuiThemeProvider>
   </Provider>,
   document.getElementById('app'),
 );

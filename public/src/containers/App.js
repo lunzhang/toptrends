@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import YoutubeChart from '../components/YoutubeChart';
 import { Responsive, WidthProvider } from 'react-grid-layout';
+import { AppBar} from 'material-ui';
+import styles from './app.scss';
+
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 const mapStateToProps = function mapStateToProps(state) {
@@ -38,6 +41,9 @@ class App extends Component {
     render() {
         return (
             <div id="main">
+                <AppBar showMenuIconButton={false} title="Top Trends" className={styles.navbar}
+                position="static" color="default">
+                </AppBar>
                 <ResponsiveReactGridLayout>
                     { this.state.charts.map(elem => this.buildChart(elem)) }
                 </ResponsiveReactGridLayout>
