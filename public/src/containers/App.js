@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import YoutubeChart from '../components/YoutubeChart';
 import Navbar from '../components/Navbar';
+import { deleteChart } from '../actions';
 import './App.scss';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
@@ -22,7 +23,7 @@ class App extends Component {
         switch (elem.type) {
             case 'Youtube':
                 return (
-                    <YoutubeChart key={elem.key} data-grid={elem.grid}/>
+                    <YoutubeChart id={elem.key} key={elem.key} data-grid={elem.grid} deleteChart={this.props.deleteChart}/>
                 );
         }
     }
@@ -39,4 +40,6 @@ class App extends Component {
     }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {
+    deleteChart
+})(App);

@@ -1,3 +1,5 @@
+import * as actions from '../actions';
+
 const initalState = [{
         type: 'Youtube',
         key: 1,
@@ -10,6 +12,8 @@ const initalState = [{
 
 export default (state = initalState, action) => {
     switch (action.type) {
+        case actions.DELETE_CHART:
+            return state.filter((elem) => elem.key !== action.id);
         default:
             return state;
     }
