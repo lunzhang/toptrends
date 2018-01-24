@@ -7,14 +7,15 @@
     padding: 10px;
     cursor: pointer;
 
-    div {
+    .header-title {
         display: inline-block;
+        font-size: 21px;
     }
 
     .delete-btn {
         float: right;
         &:hover {
-            color: #E57373;
-        }
+           color: #E57373 !important;
+       }
     }
 }

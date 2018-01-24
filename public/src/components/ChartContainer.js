@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styles from './ChartContainer.scss';
+import ClearIcon from 'material-ui/svg-icons/content/clear';
 
 export default class ChartContainer extends Component {
-    
     render() {
         const { deleteChart, id, ...chartProps } = this.props;
 
@@ -12,9 +12,8 @@ export default class ChartContainer extends Component {
                     <div className="header-title">
                         {this.props.headertitle}
                     </div>
-                    <div className="delete-btn" onClick={() => deleteChart(id)}>
-                        X
-                    </div>
+                    <ClearIcon className="delete-btn" onClick={() => deleteChart(id)}>
+                    </ClearIcon>
                 </div>
                 {this.props.children}
             </div>
