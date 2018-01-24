@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
 import Grid from './Grid';
+import { getChartData } from '../actions';
 import './App.scss';
 
 const ChartTypes = [{
@@ -10,6 +11,13 @@ const ChartTypes = [{
 }];
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        ChartTypes.forEach((chart) => {
+            this.props.getChartData(chart.chartType);
+        });
+    }
+
     render() {
         return (
             <div id="main">
@@ -20,4 +28,4 @@ class App extends Component {
     }
 }
 
-export default connect()(App);
+export default connect(null, { getChartData })(App);

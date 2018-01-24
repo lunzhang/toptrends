@@ -1,0 +1,8 @@
+:local(.chartContent) {
+    height: calc( 100% - 45px);
+    overflow: auto;
+}
+
+:local(.trend) {
+    padding: 10px;
+}
