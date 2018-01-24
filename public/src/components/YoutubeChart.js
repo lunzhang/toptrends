@@ -16,8 +16,8 @@ export default class YoutubeChart extends Component{
                     {
                         Object.keys(trends).map((date) => (
                             trends[date].map((trend, index) => (
-                                <div className={ styles.trend }>
-                                    <a key={ date + index }  href={trend.link}>
+                                <div key={ date + index } className={ styles.trend }>
+                                    <a href={trend.link}>
                                         { trend.trend }
                                     </a>
                                 </div>
