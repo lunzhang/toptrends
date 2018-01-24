@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import YoutubeChart from '../components/YoutubeChart';
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar';
 import { deleteChart } from '../actions';
 import './App.scss';
 
