@@ -5,3 +5,8 @@ export const deleteChart = id => ({
     type: DELETE_CHART,
     id
 });
+
+export const addChart = chartData => ({
+    type: ADD_CHART,
+    chartData
+});

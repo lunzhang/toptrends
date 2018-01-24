@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 
 class Grid extends Component {
     buildChart(elem) {
-        switch (elem.type) {
+        switch (elem.chartType) {
             case 'Youtube':
                 return (
                     <YoutubeChart id={elem.key} key={elem.key} data-grid={elem.grid} deleteChart={this.props.deleteChart}/>
