@@ -6,7 +6,7 @@ import { deleteChart } from '../actions';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 const mapStateToProps = (state) => ({
-    charts: state.charts
+    gridCharts: state.gridCharts
 });
 
 class Grid extends Component {
@@ -22,7 +22,7 @@ class Grid extends Component {
     render() {
         return(
             <ResponsiveReactGridLayout>
-                { this.props.charts.map(elem => this.buildChart(elem)) }
+                { this.props.gridCharts.map(elem => this.buildChart(elem)) }
             </ResponsiveReactGridLayout>
         );
     }

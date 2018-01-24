@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import charts from './charts';
+import gridCharts from './gridCharts';
 
 export default combineReducers({
-    charts
+    gridCharts
 });
