@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const api_url = 'http://localhost:80/api/';
+import { API_URL } from '../constants';
 
 export const ADD_CHART = 'ADD_CHART';
 export const DELETE_CHART = 'DELETE_CHART';
@@ -25,7 +24,7 @@ export const getChartData = chartType => (dispatch, getState) => {
             break;
     }
 
-    axios.get(api_url + chartURL).then((resp) => {
+    axios.get(API_URL + chartURL).then((resp) => {
         dispatch({
             type: CHART_DATA,
             chartType,

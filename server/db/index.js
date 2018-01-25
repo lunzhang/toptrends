@@ -5,7 +5,7 @@ let dbURI;
 if(env === 'dev'){
   dbURI = 'mongodb://localhost/toptrends';
 }else{
-  dbURI = 'mongodb://lun:lun@ds129281.mlab.com:29281/toptrends';
+  dbURI = 'mongodb://lun:lun@ds143132.mlab.com:43132/toptrends';
 }
 
 mongoose.connect(dbURI, {

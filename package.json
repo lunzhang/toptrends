@@ -2,12 +2,12 @@
   "name": "toptrends",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "dev": "start webpack-dev-server && start nodemon --watch server server/index.js",
     "dev:server": "start nodemon --watch server server/index.js",
     "dev:public": "start webpack-dev-server",
-    "start": "node server/server.js",
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

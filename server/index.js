@@ -26,7 +26,7 @@ const api = require('./api/index');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use('/', express.static(__dirname + '/public'));
+app.use('/public', express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/../public/index.html'));
 });
