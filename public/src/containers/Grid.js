@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import YoutubeChart from '../components/YoutubeChart';
 import { deleteChart } from '../actions';
+import styles from './Grid.scss';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 const mapStateToProps = (state) => ({
@@ -25,7 +26,7 @@ class Grid extends Component {
 
     render() {
         return(
-            <ResponsiveReactGridLayout>
+            <ResponsiveReactGridLayout className={ styles.reactGridStyle }>
                 { this.props.gridCharts.map(elem => this.buildChart(elem)) }
             </ResponsiveReactGridLayout>
         );

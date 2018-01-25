@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Navbar from './Navbar';
 import Grid from './Grid';
 import { getChartData } from '../actions';
-import './App.scss';
 
 const ChartTypes = [{
     chartType: 'Youtube',
