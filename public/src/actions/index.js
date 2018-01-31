@@ -15,7 +15,7 @@ export const addChart = chartData => ({
     chartData
 });
 
-export const getChartData = chartType => (dispatch, getState) => {
+export const getChartData = (chartType, params) => (dispatch, getState) => {
     let chartURL = '';
 
     switch (chartType) {
@@ -24,7 +24,7 @@ export const getChartData = chartType => (dispatch, getState) => {
             break;
     }
 
-    axios.get(API_URL + chartURL).then((resp) => {
+    axios.get(API_URL + chartURL, { params }).then((resp) => {
         dispatch({
             type: CHART_DATA,
             chartType,
