@@ -1,6 +1,7 @@
 :local(.chartContent) {
     height: calc( 100% - 45px);
     overflow: auto;
+    position: relative;
 }
 
 :local(.trend) {

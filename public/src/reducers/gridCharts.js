@@ -1,12 +1,14 @@
 import * as actions from '../actions';
 
-const initalState = [{
+const initalState = [
+    {
         chartType: 'Youtube',
         key: 1,
-        grid: {x: 0, y: 0, w: 5, h: 2}
-    }];
+        grid: {x: 0, y: 0, w: 4, h: 4}
+    }
+];
 
-let key = 2;
+let key = initalState.length + 1;
 
 export default (state = initalState, action) => {
     switch (action.type) {

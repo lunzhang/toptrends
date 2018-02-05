@@ -1,6 +1,7 @@
-import ChartContainer from './ChartContainer';
 import React, { Component } from 'react';
+import ChartContainer from './ChartContainer';
 import styles from './Youtube.scss';
+import Calendar from './Calendar';
 
 const containerProps = {
     headertitle: 'Youtube Trends',
@@ -12,18 +13,8 @@ export default class YoutubeChart extends Component{
 
         return (
             <ChartContainer  { ...this.props } { ...containerProps } >
-                <div className={ styles.chartContent }>
-                    {
-                        Object.keys(trends).map((date) => (
-                            trends[date].map((trend, index) => (
-                                <div key={ date + index } className={ styles.trend }>
-                                    <a href={trend.link}>
-                                        { trend.trend }
-                                    </a>
-                                </div>
-                            ))
-                        ))
-                    }
+                <div className={ styles.chartContent } ref={(content) => { this.contentContainer = content}}>
+                    <Calendar container={ this.contentContainer }/>
                 </div>
             </ChartContainer>
         );
