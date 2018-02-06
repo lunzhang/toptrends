@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ChartContainer from './ChartContainer';
-import Calendar from '../components/Calendar';
+import Calendar from '../../components/Calendar';
 import styles from './Youtube.scss';
 
 const containerProps = {

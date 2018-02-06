@@ -4,7 +4,7 @@ const initalState = [
     {
         chartType: 'Youtube',
         key: 1,
-        grid: {x: 0, y: 0, w: 4, h: 4}
+        grid: {x: 0, y: 0, w: 4, h: 3}
     }
 ];
 

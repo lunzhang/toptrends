@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
-import Grid from './Grid';
+import Grid from './Grid/Grid';
 import { getChartData } from '../actions';
 
 const ChartTypes = [{
     chartType: 'Youtube',
-    grid: {x: 0, y: 0, w: 5, h: 2}
+    grid: {x: 0, y: 0, w: 4, h: 3}
 }];
 
 class App extends Component {

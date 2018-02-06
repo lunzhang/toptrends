@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteChart } from '../actions';
+import { deleteChart } from '../../actions';
 import ClearIcon from 'material-ui/svg-icons/content/clear';
 import styles from './ChartContainer.scss';
 
