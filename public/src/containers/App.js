@@ -6,7 +6,7 @@ import { getChartData } from '../actions';
 
 const ChartTypes = [{
     chartType: 'Youtube',
-    grid: {x: 0, y: 0, w: 4, h: 3}
+    grid: {x: 0, y: 0, w: 4, h: 4}
 }];
 
 class App extends Component {
