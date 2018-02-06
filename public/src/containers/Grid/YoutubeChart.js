@@ -13,11 +13,23 @@ const mapStateToProps = (state) => ({
 });
 
 class YoutubeChart extends Component{
+    constructor(props) {
+        super(props);
+        this.setContainer = this.setContainer.bind(this);
+        this.state = {
+            contentContainer: null,
+        };
+    }
+
+    setContainer(container) {
+        this.setState({contentContainer: container});
+    }
+
     render() {
         return (
             <ChartContainer  { ...this.props } { ...containerProps }>
-                <div className={ styles.chartContent } ref={ (content) => { this.contentContainer = content} }>
-                    <Calendar container={ this.contentContainer } data={ this.props.data }/>
+                <div className={ styles.chartContent } ref={ this.setContainer }>
+                    <Calendar container={ this.state.contentContainer } data={ this.props.data }/>
                 </div>
             </ChartContainer>
         );
