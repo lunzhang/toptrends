@@ -2,8 +2,21 @@
     height: calc( 100% - 45px);
     overflow: auto;
     position: relative;
+
+    .Cal__Header__root {
+        padding: 0px 20px;
+        min-height: 70px;
+    }
+
+    .Cal__Weekdays__day {
+        padding: 10px 0;
+    }
 }
 
 :local(.trend) {
+    padding: 10px;
+}
+
+:local(.chartNavBtn) {
     padding: 10px;
 }

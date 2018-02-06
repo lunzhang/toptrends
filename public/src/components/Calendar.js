@@ -26,7 +26,7 @@ export default class Calendar extends Component {
             this.props.container ?
             <InfiniteCalendar
                 className={ styles.calendarContainer }
-                height = { this.props.container.clientHeight - 147 }
+                height = { this.props.container.clientHeight - 144 }
                 min={ BEGIN_DATE } minDate={ BEGIN_DATE }
                 max={ this.today } maxDate={ this.today }
                 onSelect={ this.onSelect }
