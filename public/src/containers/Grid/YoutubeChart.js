@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { RaisedButton } from 'material-ui';
 import ChartContainer from './ChartContainer';
 import TrendView from '../../components/TrendView';
 import Calendar from '../../components/Calendar';
@@ -50,14 +51,17 @@ class YoutubeChart extends Component {
         return (
             <ChartContainer  { ...this.props } { ...containerProps }>
                 <div className={ styles.chartContent } ref={ this.setContainer }>
-                    {
-                        this.state.currentView === 'Calendar' ?
-                        <button type="button" className="btn btn-primary"
-                            onClick={() => this.setView('TrendView')}> Trend </button>
-                        :
-                        <button className={ styles.chartNavBtn }
-                            onClick={() => this.setView('Calendar')}> Back </button>
-                    }
+                    <div className={ styles.navbar }>
+                        {
+                            this.state.currentView === 'Calendar' ?
+                            <RaisedButton className="trend-btn" label="Trend" primary={ true }
+                                onClick={() => this.setView('TrendView')} />
+                            :
+                            <RaisedButton label="Back" secondary={ true }
+                                onClick={() => this.setView('Calendar')} />
+                        }
+                    </div>
+
                     <div>
                         {
                             this.state.currentView === 'Calendar' ?

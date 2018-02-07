@@ -17,6 +17,11 @@
     padding: 10px;
 }
 
-:local(.chartNavBtn) {
+:local(.navbar) {
     padding: 10px;
+    overflow: auto;
+
+    .trend-btn {
+        float: right;
+    }
 }
