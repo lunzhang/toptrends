@@ -47,7 +47,7 @@ class YoutubeChart extends Component {
                 if (!date) date = this.data.selectedDate;
                 else this.data.selectedDate = date;
 
-                const localeDate = date.toLocaleDateString();
+                const localeDate = date.toLocaleDateString('en-US');
 
                 if (!this.props.data || !this.props.data[localeDate]) {
                     this.props.getChartData(chartType, { date: localeDate });

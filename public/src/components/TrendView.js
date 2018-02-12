@@ -5,8 +5,8 @@ export default class TrendView extends Component {
     render() {
         let data = [];
 
-        if (this.props.data && this.props.data[this.props.date.toLocaleDateString()]) {
-            data = this.props.data[this.props.date.toLocaleDateString()];
+        if (this.props.data && this.props.data[this.props.date.toLocaleDateString('en-US')]) {
+            data = this.props.data[this.props.date.toLocaleDateString('en-US')];
         }
 
         return (

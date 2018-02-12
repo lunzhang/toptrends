@@ -11,7 +11,7 @@ const { redditPopular, redditTrends } = require('./reddit.js');
 const { twitterTrends } = require('./twitter.js');
 
 function dailyUpdate() {
-        const date = new Date().toLocaleDateString();
+        const date = new Date().toLocaleDateString('en-US');
 
         //  Youtube trending videos
         youtubeTrends().then((trends) => {

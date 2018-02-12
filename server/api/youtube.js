@@ -4,7 +4,7 @@ const YoutubeTrends = mongoose.model('YoutubeTrends');
 const youtubeTrends = (req, res) => {
     let { date } = req.query;
 
-    if(!date) date = new Date().toLocaleDateString();
+    if(!date) date = new Date().toLocaleDateString('en-US');
 
     YoutubeTrends.find({ date }, (err, trends) => {
         if(err) res.sendStatus('400');
