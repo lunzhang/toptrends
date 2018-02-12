@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { AppBar, IconMenu, IconButton, Menu, MenuItem } from 'material-ui';
 import AddIcon from 'material-ui/svg-icons/content/add';
 import { addChart } from '../actions';
+import { CHART_TYPES } from '../constants';
 
 const addChartMenu = (chartTypes, addChart) => (
     <IconMenu
@@ -20,7 +21,7 @@ class Navbar extends Component {
         return (
             <AppBar showMenuIconButton={false} title="Top Trends"
             position="static" color="default" iconElementRight={
-                addChartMenu(this.props.chartTypes, this.props.addChart)
+                addChartMenu(CHART_TYPES, this.props.addChart)
             }>
             </AppBar>
         );

@@ -3,7 +3,11 @@ import styles from './TrendView.scss';
 
 export default class TrendView extends Component {
     render() {
-        const data = this.props.data ? this.props.data[this.props.date.toLocaleDateString()] : [];
+        let data = [];
+
+        if (this.props.data && this.props.data[this.props.date.toLocaleDateString()]) {
+            data = this.props.data[this.props.date.toLocaleDateString()];
+        }
 
         return (
             <div>

@@ -16,7 +16,7 @@ export default class Calendar extends Component {
 
     onSelect(date) {
         if (this.selectedDate.getTime() === date.getTime()) {
-            this.props.onDateSelect(date);
+            this.props.setView('TrendView', date);
         }
         this.selectedDate = date;
     }
